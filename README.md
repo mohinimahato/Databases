@@ -157,31 +157,30 @@ Let's consider a real-life scenario involving a database of employees in a compa
         - If Y is a subset of X, then X → Y. This axiom reflects the idea that a set of attributes functionally determines itself.
 
         - If we have the attribute EmployeeID, then EmployeeID → EmployeeID is a reflexive functional dependency. This is evident because the EmployeeID uniquely identifies itself.
+ - Augmentation (or Additivity/ Partial Dependency):
 
-    - Augmentation (or Additivity/ Partial Dependency):
-
-        - If X → Y, then for any set of attributes Z, XZ → YZ. This axiom indicates that if a set of attributes functionally determines another set, adding more attributes to both sides does not change the functional dependency.
+     - If X → Y, then for any set of attributes Z, XZ → YZ. This axiom indicates that if a set of attributes functionally determines another set, adding more attributes to both sides does not change the functional dependency.
         
-        - If EmployeeID → EmployeeName, then for any set of attributes Department, EmployeeID Department → EmployeeName Department. This reflects the idea that adding more attributes to both sides does not change the functional dependency.
+     - If EmployeeID → EmployeeName, then for any set of attributes Department, EmployeeID Department → EmployeeName Department. This reflects the idea that adding more attributes to both sides does not change the functional dependency.
 
-    - Transitivity:
+ - Transitivity:
 
-        - If X → Y and Y → Z, then X → Z. This axiom implies that if there is a chain of functional dependencies, you can infer a transitive dependency.
+     - If X → Y and Y → Z, then X → Z. This axiom implies that if there is a chain of functional dependencies, you can infer a transitive dependency.
 
-        - If EmployeeID → ManagerID and ManagerID → Department, then EmployeeID → Department. This transitive dependency allows us to infer that the employee's ID determines their department indirectly through the manager.
+     - If EmployeeID → ManagerID and ManagerID → Department, then EmployeeID → Department. This transitive dependency allows us to infer that the employee's ID determines their department indirectly through the manager.
 
-    - Union (or Decomposition):
+ - Union (or Decomposition):
 
-        - If X → Y and X → Z, then X → YZ. This axiom states that if a set of attributes functionally determines two other sets independently, it also determines their union.
+    - If X → Y and X → Z, then X → YZ. This axiom states that if a set of attributes functionally determines two other sets independently, it also determines their union.
 
-        - If EmployeeID → EmployeeName and EmployeeID → Department, then EmployeeID → EmployeeName Department. This is the union axiom in action, showing that the employee's ID determines both their name and department.
+    - If EmployeeID → EmployeeName and EmployeeID → Department, then EmployeeID → EmployeeName Department. This is the union axiom in action, showing that the employee's ID determines both their name and department.
+ - Pseudotransitivity:
 
-    - Pseudotransitivity:
+    - If X → Y and WY → Z, then WX → Z. This is a generalized form of transitivity, allowing indirect dependencies to be used in certain cases.
 
-        - If X → Y and WY → Z, then WX → Z. This is a generalized form of transitivity, allowing indirect dependencies to be used in certain cases.
+   - If EmployeeID → Department and Department ManagerID → EmployeeName, then EmployeeID ManagerID → EmployeeName. This pseudotransitivity allows for indirect dependencies to be used, where the employee's ID and manager's ID together determine the employee's name.
 
-        - If EmployeeID → Department and Department ManagerID → EmployeeName, then EmployeeID ManagerID → EmployeeName. This pseudotransitivity allows for indirect dependencies to be used, where the employee's ID and manager's ID together determine the employee's name.
-
+   
 These axioms provide a foundation for reasoning about functional dependencies and are used to ensure the consistency and integrity of a relational database schema. They guide the normalization process, helping to design databases with minimal redundancy and logical coherence.
 
 - DB Keys:
