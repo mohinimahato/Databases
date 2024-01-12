@@ -119,6 +119,36 @@ Ex: DROP Table Movies;
 Show tables; 
 ```
 
+- Like query for string matching 
+
+```sql
+SELECT Col1, Col2, .. FROM Table WHERE Column1 like %string%
+
+/*example: i) SELECT * FROM ACTORS WHERE NAME LIKE "CHRIS%"
+
+Here it denotes prefix matching i.e get me all the rows where the name starts from chris and after that it can have anything
+
+ii)SELECT * FROM ACTORS WHERE NAME LIKE "%Depp"
+Here it denotes that give me all the rows where Name might start with anything but it alwas ends with Depp
+*/
+note: Like query is not limited to just databases, we can use it various other ways as well
+-- example: SHOW DATABASES LIKE "ECOM%"
+
+```
+
+- ORDER BY: to order details in a particular order, default is asecending, for making it descending need to add DESC 
+
+```sql
+SELECT * FROM ORDER BY Networth; 
+SELECT * FROM ORDER BY Networth DESC; 
+```
+
+- Using like and order by query together
+```sql
+SELECT * FROM ACTORS where firstname like "ch%" order by networth desc
+```
+
+
 ### **Normalisation and DB Design**
 ----
 
